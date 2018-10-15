@@ -1,0 +1,64 @@
+{
+  "packages": [
+    {
+      "name": "arduino-beta",
+      "maintainer": "Doppler",
+      "websiteURL": "https://noscene.github.io/doppler4arduino/",
+      "email": "me@no-scene.de",
+      "help": {
+        "online": "http://www.arduino.cc/en/Reference/HomePage"
+      },
+      "platforms": [
+        {
+          "name": "Arduino SAMD core - Doppler",
+          "architecture": "samd",
+          "version": "1.2.3",
+          "category": "Arduino",
+          "url": "https://noscene.github.io/doppler4arduino/samd-1.2.3.tar.bz2",
+          "archiveFileName": "samd-1.2.3.tar.bz2",
+          "checksum": "SHA-256:472bb0dd1ed13944c1c51357b93effff69f7991c1a35088ca62f05385a777dfc",
+          "size": "3090026",
+          "boards": [
+            {
+              "name": "Doppler M4 (SAMD51)"
+            }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "arm-none-eabi-gcc",
+              "version": "4.8.3-2014q1"
+            },
+            {
+              "packager": "arduino",
+              "name": "bossac",
+              "version": "1.7.0"
+            },
+            {
+              "packager": "arduino",
+              "name": "openocd",
+              "version": "0.9.0-arduino6-static"
+            },
+            {
+              "packager": "arduino",
+              "name": "CMSIS",
+              "version": "4.5.0"
+            },
+            {
+              "packager": "arduino",
+              "name": "CMSIS-Atmel",
+              "version": "1.1.0"
+            },
+            {
+              "packager": "arduino",
+              "name": "arduinoOTA",
+              "version": "1.2.0"
+            }
+          ]
+        }
+      ],
+      "tools": [
+      ]
+    }
+  ]
+}
