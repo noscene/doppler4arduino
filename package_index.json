@@ -13,7 +13,7 @@
           "name": "Arduino SAMD core - Doppler",
           "architecture": "samd",
           "version": "1.2.3",
-          "category": "Arduino",
+          "category": "Dadamachines",
           "url": "https://noscene.github.io/doppler4arduino/samd-1.2.3.tar.bz2",
           "archiveFileName": "samd-1.2.3.tar.bz2",
           "checksum": "SHA-256:472bb0dd1ed13944c1c51357b93effff69f7991c1a35088ca62f05385a777dfc",
