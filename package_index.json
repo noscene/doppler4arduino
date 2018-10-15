@@ -20,10 +20,8 @@
           "size": "3090026",
           "boards": [
             {
-              "name": "Doppler M4 (SAMD51)"
-            }
-          ],
-          "toolsDependencies": [
+              "name": "Doppler M4 (SAMD51)",
+              "toolsDependencies": [
                     {
               "name": "arm-none-eabi-gcc",
               "packager": "arduino",
@@ -49,6 +47,8 @@
               "packager": "arduino",
               "version": "1.2.0"
 
+            }
+          ]
             }
           ]
         }
