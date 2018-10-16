@@ -10,7 +10,7 @@
     "platforms": [{
         "name": "Doppler SAMD51 (32-bits ARM Cortex-M4) Boards",
         "architecture": "samd",
-        "version": "0.0.4",
+        "version": "0.0.6",
         "category": "Contributed",
         "help": {
           "online": "https://github.com/dadamachines/doppler"
