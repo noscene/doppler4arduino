@@ -10,7 +10,7 @@
     "platforms": [{
         "name": "dadamachines doppler (dependency: Arduino SAMD Boards 1.6.10)",
         "architecture": "samd",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "category": "Contributed",
         "help": {
           "online": "https://github.com/dadamachines/doppler"
