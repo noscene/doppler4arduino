@@ -8,9 +8,9 @@
       "online": "https://github.com/dadamachines/doppler"
     },
     "platforms": [{
-        "name": "dadamachines doppler (dependency: Arduino SAMD Boards 1.6.10)",
+        "name": "Doppler SAMD51 (32-bits ARM Cortex-M4) Boards",
         "architecture": "samd",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "category": "Contributed",
         "help": {
           "online": "https://github.com/dadamachines/doppler"
@@ -19,7 +19,7 @@
           "archiveFileName": "doppler-1.2.4.tar.bz2",
           "size": "3090026",
         "boards": [{
-         "name": "dadamachines doppler",
+         "name": "Doppler M4 (SAMD51)",
           "toolsDependencies": [
             {
               "name": "arm-none-eabi-gcc",
