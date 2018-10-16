@@ -1,6 +1,6 @@
 {
   "packages": [{
-    "name": "dadamachines doppler",
+    "name": "dadamachines_doppler",
     "maintainer": "dadamachines",
     "websiteURL": "https://noscene.github.io/doppler4arduino/",
     "email": "hi@dadamachines.com",
