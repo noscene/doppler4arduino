@@ -15,8 +15,8 @@
         "help": {
           "online": "https://github.com/dadamachines/doppler"
         },
-          "url": "https://noscene.github.io/doppler4arduino/samd-1.2.3.tar.bz2",
-          "archiveFileName": "doppler-1.2.3.tar.bz2",
+          "url": "https://noscene.github.io/doppler4arduino/samd-1.2.4.tar.bz2",
+          "archiveFileName": "doppler-1.2.4.tar.bz2",
           "size": "3090026",
         "boards": [{
          "name": "dadamachines doppler",
