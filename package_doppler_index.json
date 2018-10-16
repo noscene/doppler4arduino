@@ -17,7 +17,7 @@
         },
           "url": "https://noscene.github.io/doppler4arduino/samd-1.2.6.tar.bz2",
           "archiveFileName": "doppler-1.2.6.tar.bz2",
-          "size": "3090026",
+          "size": "3093890",
         "boards": [{
          "name": "Doppler M4 (SAMD51)",
           "toolsDependencies": [
