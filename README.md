@@ -29,11 +29,28 @@ https://noscene.github.io/doppler4arduino/package_doppler_index.json
 
 ## Examples
 
+### Blink on board LED
+
+```
+// the setup routine runs once when you press reset:
+void setup() {                
+  // initialize the digital pin as an output.
+  pinMode(LED_BUILTIN, OUTPUT);     
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);                       // wait for a second
+}
+```
+
 ### fast write 2 DAC Channels on A0 and A4 (PA02+PA05)
 
 ```
 void setup() {
-  
   // put your setup code here, to run once:
   pinMode(PIN_DAC0,OUTPUT);
   pinMode(PIN_DAC1,OUTPUT);
@@ -44,10 +61,8 @@ void loop() {
   // put your main code here, to run repeatedly:
   static uint16_t left = 0;
   static uint16_t right = 0;
-
   left+=256;
   right-=256;
-  
   dacWrite(left,right);
 }
 ```
