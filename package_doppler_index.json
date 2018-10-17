@@ -8,7 +8,7 @@
       "online": "https://noscene.github.io/doppler4arduino/"
     },
     "platforms": [{
-        "name": "Doppler SAMD51 (32-bits ARM Cortex-M4) Boards",
+        "name": "Doppler SAMD51+FPGA (32-bits ARM Cortex-M4) Boards",
         "architecture": "samd",
         "version": "0.0.7",
         "category": "Contributed",
