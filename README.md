@@ -1,8 +1,18 @@
-# doppler4arduino
+# Doppler - CortexM4 meets FPGA
+![doppler](screenshots/doppler_v1.jpg)
+- arduino compatible board
+- cpu: SAMD51 120mhz
+- FPGA: Lattice ice40up5K
+- micro usb
+- 17 leds
+- reset button
+- 2 custom buttons
+
 ## Setup
-add board URLs (comma separated):
-https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,
-https://noscene.github.io/doppler4arduino/package_doppler_index.json
+First need install the arduino ide from https://www.arduino.cc/en/Main/Software .
+Then add board URLs (comma separated):
+- https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,
+- https://noscene.github.io/doppler4arduino/package_doppler_index.json
 
 ![add board urls](screenshots/ide_setting_url.png)
 go to boardmanager
