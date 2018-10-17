@@ -27,3 +27,27 @@ https://noscene.github.io/doppler4arduino/package_doppler_index.json
  */
 ```
 
+## Examples
+
+### fast write 2 DAC Channels on A0 and A4 (PA02+PA05)
+
+```
+void setup() {
+  
+  // put your setup code here, to run once:
+  pinMode(PIN_DAC0,OUTPUT);
+  pinMode(PIN_DAC1,OUTPUT);
+  dacInit();
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  static uint16_t left = 0;
+  static uint16_t right = 0;
+
+  left+=256;
+  right-=256;
+  
+  dacWrite(left,right);
+}
+```
