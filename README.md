@@ -1,9 +1,23 @@
 # doppler4arduino
-
-Use this Link in Arduino IDE 
-Arduino->Settings->Board URLs
+## Setup
+add board URLs (comma separated):
+https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,
 https://noscene.github.io/doppler4arduino/package_doppler_index.json
 
+![add board urls](screenshots/ide_setting_url.png)
+go to boardmanager
+![add board urls](screenshots/ide_go_boardmanager.png)
+install both boards
+![add board urls](screenshots/ide_install_boards.png)
+select the Doppler Board
+![add board urls](screenshots/ide_select_board.png)
+select USB Port
+![add board urls](screenshots/ide_select_port.png)
+
+
+
+
+## Board Layout and PINs
 
 ```
     /*          DOPPLER-Board-Layout:
