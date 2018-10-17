@@ -5,7 +5,7 @@
     "websiteURL": "https://noscene.github.io/doppler4arduino/",
     "email": "hi@dadamachines.com",
     "help": {
-      "online": "https://github.com/dadamachines/doppler"
+      "online": "https://noscene.github.io/doppler4arduino/"
     },
     "platforms": [{
         "name": "Doppler SAMD51 (32-bits ARM Cortex-M4) Boards",
@@ -13,7 +13,7 @@
         "version": "0.0.7",
         "category": "Contributed",
         "help": {
-          "online": "https://github.com/dadamachines/doppler"
+          "online": "https://noscene.github.io/doppler4arduino/"
         },
           "url": "https://noscene.github.io/doppler4arduino/samd-1.2.7.tar.bz2",
           "archiveFileName": "doppler-1.2.7.tar.bz2",
