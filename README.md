@@ -66,3 +66,34 @@ void loop() {
   dacWrite(left,right);
 }
 ```
+
+
+
+### FPGA demo set 4x4 LED Matrix
+see https://github.com/noscene/Doppler_FPGA_Firmware for make bitstream from verilog
+```
+#include <ICEClass.h>
+
+ICEClass ice40;
+uint16_t leds = 1;
+
+void setup() {
+  // put your setup code here, to run once:
+  ice40.upload(); // Upload BitStream Firmware to FPGA -> see variant.h
+  delay(100);
+
+  // start SPI runtime Link to FPGA
+  ice40.initSPI();
+}
+
+
+void loop() {
+    // put your main code here, to run repeatedly:
+    ice40.sendSPI16(leds );
+    leds = leds << 1;
+    if(leds==0){
+      leds=1;  
+    }
+    delay(100);
+}
+```
