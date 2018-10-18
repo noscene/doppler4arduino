@@ -8,9 +8,15 @@
 - reset button
 - 2 custom buttons
 
+Builds based on this repo:
+https://github.com/noscene/ArduinoCore-samd
+
 ## Setup
-First need install the arduino ide from https://www.arduino.cc/en/Main/Software .
-Then add board URLs (comma separated):
+First need install the arduino ide from 
+- https://www.arduino.cc/en/Main/Software
+
+then add board URLs (comma separated):
+
 - https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,
 - https://noscene.github.io/doppler4arduino/package_doppler_index.json
 
