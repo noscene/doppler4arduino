@@ -10,13 +10,13 @@
     "platforms": [{
         "name": "Doppler SAMD51+FPGA (32-bits ARM Cortex-M4) Boards",
         "architecture": "samd",
-        "version": "0.0.7",
+        "version": "1.2.8",
         "category": "Contributed",
         "help": {
           "online": "https://noscene.github.io/doppler4arduino/"
         },
-          "url": "https://noscene.github.io/doppler4arduino/samd-1.2.7.tar.bz2",
-          "archiveFileName": "doppler-1.2.7.tar.bz2",
+          "url": "https://noscene.github.io/doppler4arduino/samd-1.2.8.tar.bz2",
+          "archiveFileName": "doppler-1.2.8.tar.bz2",
           "size": "3089281",
         "boards": [{
          "name": "Doppler M4 (SAMD51)",
