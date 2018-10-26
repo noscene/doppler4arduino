@@ -127,3 +127,60 @@ void loop() {
     delay(100);
 }
 ```
+
+
+
+
+### Create second I2C Bus as Wire1 on pins A7+A8 and scan the bus
+see https://learn.adafruit.com/using-atsamd21-sercom-to-add-more-spi-i2c-serial-ports/creating-a-new-wire
+how to handle sercoms
+```
+#include <Wire.h>
+#include "wiring_private.h" // pinPeripheral() function
+TwoWire Wire1(&sercom0, A7, A8);  // create new Wire Port
+
+void setup() {
+  // put your setup code here, to run once:
+  Wire1.begin();  // set pinPeripheral after this line!!!
+  pinPeripheral(A7, PIO_SERCOM);    // assign SDA
+  pinPeripheral(A8, PIO_SERCOM);    // assign SDC
+  
+  Serial.begin(9600);
+  Serial.println("\nI2C Scanner");
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  byte error, address;
+  int nDevices;
+  Serial.println("Scanning...");
+  nDevices = 0;
+  for(address = 1; address < 127; address++ )   {
+    // The i2c_scanner uses the return value of
+    // the Write.endTransmisstion to see if
+    // a device did acknowledge to the address.
+    Wire1.beginTransmission(address);
+    error = Wire1.endTransmission();
+    Wire1.requestFrom(address,2);
+    
+    if (error == 0) {
+      Serial.print("I2C device found at address 0x");
+      if (address<16) 
+        Serial.print("0");
+      Serial.print(address,HEX);
+      Serial.println("  !");
+      nDevices++;
+    } else if (error==4)  {
+      Serial.print("Unknow error at address 0x");
+      if (address<16) 
+        Serial.print("0");
+      Serial.println(address,HEX);
+    }    
+  }
+  if (nDevices == 0)
+    Serial.println("No I2C devices found\n");
+  else
+    Serial.println("done, if find on each addr -> check pullups! \n");
+  delay(5000);           // wait 5 seconds for next scan
+}
+```
