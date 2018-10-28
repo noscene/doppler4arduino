@@ -128,7 +128,25 @@ void loop() {
 }
 ```
 
+### Show hex chars on 4x4 matrix
+```
+#include <ICEClass.h>
+ICEClass ice40;
+uint16_t hexmapFont[16] = { 0xF99F,0xF22F,0xF42F,0xF17F,0x1F99,0x7F8F,0xF9F8,0x111F,
+                            0x7DBE,0x1F9F,0x9F9F,0xADAC,0xF88F,0xE99E,0xF8EF,0x8E8F };
+void setup() { // put your setup code here, to run once:
+  ice40.upload(); // Upload BitStream Firmware to FPGA -> see variant.h
+  delay(100);
+  ice40.initSPI();  // start SPI runtime Link to FPGA
+}
 
+void loop() {  // put your main code here, to run repeatedly:
+  for(int i = 0 ; i < 16 ; i++){
+      ice40.sendSPI16(hexmapFont[i] );  
+      delay(800);
+  }
+}
+```
 
 
 ### Create second I2C Bus as Wire1 on pins A7+A8 and scan the bus
@@ -185,23 +203,34 @@ void loop() {
 }
 ```
 
-
-### Show hex chars on 4x4 matrix
+### Create UART RX,TX Serial2 on pins A7+A8 
+see https://learn.adafruit.com/using-atsamd21-sercom-to-add-more-spi-i2c-serial-ports/creating-a-new-serial
+how to handle sercoms
 ```
-#include <ICEClass.h>
-ICEClass ice40;
-uint16_t hexmapFont[16] = { 0xF99F,0xF22F,0xF42F,0xF17F,0x1F99,0x7F8F,0xF9F8,0x111F,
-                            0x7DBE,0x1F9F,0x9F9F,0xADAC,0xF88F,0xE99E,0xF8EF,0x8E8F };
-void setup() { // put your setup code here, to run once:
-  ice40.upload(); // Upload BitStream Firmware to FPGA -> see variant.h
-  delay(100);
-  ice40.initSPI();  // start SPI runtime Link to FPGA
+// Create Serial2 instance
+#include "wiring_private.h" // pinPeripheral() function
+Uart Serial2 (&sercom0, A7, A8, SERCOM_RX_PAD_1, UART_TX_PAD_0);
+void SERCOM0_0_Handler() { Serial2.IrqHandler(); }
+void SERCOM0_1_Handler() { Serial2.IrqHandler(); }
+void SERCOM0_2_Handler() { Serial2.IrqHandler(); }
+void SERCOM0_3_Handler() { Serial2.IrqHandler(); }
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(115200);
+  Serial2.begin(9600);
+  pinPeripheral(A7, PIO_SERCOM);  // TX
+  pinPeripheral(A8, PIO_SERCOM);  // RX
 }
 
-void loop() {  // put your main code here, to run repeatedly:
-  for(int i = 0 ; i < 16 ; i++){
-      ice40.sendSPI16(hexmapFont[i] );  
-      delay(800);
+uint8_t i=0;
+void loop() {
+  Serial.print(i);
+  Serial2.write(i++);
+  if (Serial2.available()) {
+    Serial.print(" -> 0x"); Serial.print(Serial2.read(), HEX);
   }
+  Serial.println();
+  delay(500);
 }
 ```
