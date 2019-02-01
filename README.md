@@ -1,5 +1,5 @@
 # Doppler - CortexM4 meets FPGA
-![doppler](screenshots/doppler_production_test_v1.jpg)
+![doppler](screenshots/DSC02489.png)
 - arduino compatible board
 - cpu: SAMD51 120mhz
 - FPGA: Lattice ice40up5K
