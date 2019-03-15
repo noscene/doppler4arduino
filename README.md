@@ -245,3 +245,29 @@ void loop() {
   delay(500);
 }
 ```
+
+
+
+### Performance
+Classic ArduinoStyle vs direct Register Access
+```
+void setup() {
+  pinMode(0,OUTPUT);  // PA13
+  digitalWrite(0,true);
+}
+
+
+// direct SAMD51 register access PA13
+void loop() {
+  while(1){
+    PORT->Group[PORTA].OUTCLR.reg = 1ul << 13;  // this part generate 30Mhz so it looks like this part need 2 cpu cycles for each pin change
+    PORT->Group[PORTA].OUTSET.reg = 1ul << 13;  // this part generate 30Mhz
+  }
+}
+
+// classic way but not realy fast
+void loop_not_very_fast() {
+  digitalWrite(0,true);   // this part generate 0.5 Mhz
+  digitalWrite(0,false);  // this part generate 0.5 Mhz
+}
+```
