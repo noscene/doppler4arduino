@@ -61,6 +61,7 @@
             "online": "https://noscene.github.io/doppler4arduino/"
           },
             "url": "https://noscene.github.io/doppler4arduino/samd-1.2.9.tar.bz2",
+            "checksum": "SHA-256:b069b8cd5b5a60ce7d28c83a0933198c9b68c72496e287364fd002dba79ce08f",
             "archiveFileName": "doppler-1.2.9.tar.bz2",
             "size": "6207403",
             "boards": [{
